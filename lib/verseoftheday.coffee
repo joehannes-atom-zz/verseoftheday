@@ -1,11 +1,28 @@
+{ RealFodView } = require "./verseoftheday-view"
+
 module.exports =
+  statusIcon: null
+  view: null
+  subscriptions: null
   statusIcon: null
 
   activate: ->
+	@view = new RealFoodView();
+    @subscriptions = new CompositeDisposable();
+
+    @subscriptions.add(atom.commands.add('atom-workspace', {
+	  'votd:toggle': => @toggle()
+    }));
 
   deactivate: ->
-    @statusIconTile?.destroy()
-    @statusIconTile = null
+    @statusIcon?.destroy()
+    @statusIcon = null
 
-  consumeStatusBar: (statusIconProvider) ->
-    @statusIconTile = new (require './status-icon')(statusIconProvider)
+  serialize: -> {}
+
+  consumeStatusBar: (statusBar) ->
+    @statusIcon = statusBar.addRightTile {
+	  item: @view.getElement()
+	  priority: -2
+	}
+  toggle: -> @view.toggle()
