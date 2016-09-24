@@ -19,7 +19,7 @@ module.exports =
 
 	consumeStatusBar: (statusBar) ->
 		@statusIcon = statusBar.addRightTile
-		  item: @view.getElement()
+		  item: @view.element
 		  priority: -2
 
 	toggle: -> @view.toggle()
