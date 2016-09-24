@@ -9,10 +9,7 @@ module.exports =
   activate: ->
 	@view = new RealFoodView();
     @subscriptions = new CompositeDisposable();
-
-    @subscriptions.add(atom.commands.add('atom-workspace', {
-	  'votd:toggle': => @toggle()
-    }));
+    @subscriptions.add atom.commands.add 'atom-workspace', 'votd:toggle': => @toggle()
 
   deactivate: ->
     @statusIcon?.destroy()
