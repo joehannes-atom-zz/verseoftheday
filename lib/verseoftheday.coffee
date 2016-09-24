@@ -18,8 +18,8 @@ module.exports =
   serialize: -> {}
 
   consumeStatusBar: (statusBar) ->
-    @statusIcon = statusBar.addRightTile {
+    @statusIcon = statusBar.addRightTile
 	  item: @view.getElement()
 	  priority: -2
-	}
+	
   toggle: -> @view.toggle()
