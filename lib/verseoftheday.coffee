@@ -1,4 +1,5 @@
 RealFoodView = require "./verseoftheday-view"
+{ CompositeDisposable } = require 'atom'
 
 module.exports =
 	statusIcon: null
@@ -12,6 +13,8 @@ module.exports =
 		@subscriptions.add atom.commands.add 'atom-workspace', 'votd:toggle': => @toggle()
 
 	deactivate: ->
+		@view.destroy()
+		@subscriptions.dispose()
 		@statusIcon?.destroy()
 		@statusIcon = null
 
