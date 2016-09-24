@@ -18,7 +18,7 @@ class StatusIcon extends View
 	@view = new VerseOfTheDayView()
 
   attach: ->
-    @tile = @statusIconProvider.addRightTile(item: this, priority: -2)
+    @tile = @statusIconProvider.addRightTile { item: this, priority: -2 }
 
   destroy: ->
 	@tile.destroy()
