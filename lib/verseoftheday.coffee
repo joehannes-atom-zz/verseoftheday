@@ -1,8 +1,7 @@
 module.exports =
-	statusIcon: null
+  statusIcon: null
 
   activate: ->
-	"foo"
 
   deactivate: ->
     @statusIconTile?.destroy()
