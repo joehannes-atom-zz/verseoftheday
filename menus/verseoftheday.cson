@@ -1,0 +1,13 @@
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Verse of the day'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'votd:toggle'
+        }      ]
+    ]
+  }
+]

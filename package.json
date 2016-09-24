@@ -1,0 +1,36 @@
+{
+  "name": "verse-of-the-day",
+  "main": "./lib/verseoftheday",
+  "version": "0.0.1",
+  "description": "A VOTD for the atomic geek",
+  "author": "Johannes Neugschwentner",
+  "keywords": [
+    "bible",
+	"verse",
+	"votd",
+    "scripture"
+  ],
+  "contributors": [
+    {
+      "name": "Johannes Neugschwentner",
+      "email": "johannes.neugschwentner@gmail.com",
+      "url": "stackoverflow.com/cv/joehannes"
+    }  ],
+  "homepage": "https://atom.io/packages/verse-of-the-day",
+  "repository": "https://github.com/joehannes-atom/verseoftheday",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.2.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.1.0"
+  },
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  }
+ }
+}

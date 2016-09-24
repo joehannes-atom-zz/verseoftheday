@@ -1,0 +1,5 @@
+'.platform-darwin atom-workspace':
+  'cmd-shift-?': 'votd:toggle'
+
+'.platform-linux atom-workspace, .platform-win32 atom-workspace':
+  'alt-shift-?': 'votd:toggle'
