@@ -6,6 +6,7 @@ VerseOfTheDayView = require './view'
 module.exports =
 class StatusIcon extends View
   @content: ->
+	@div class: 'votd status-bar', tabindex: -1, =>
       @i class: "icon icon-book", click: 'toggle'
 
   initialize: (@statusIconProvider) ->
