@@ -42,7 +42,7 @@ class RealFoodView
 		@panel.destroy()
 
 	getLyrics: =>
-		$.get "http://www.biblegateway.com", (data) =>
+		fetch("http://www.biblegateway.com").then (data) =>
 			console.log(data);
 			#@votdc.appendchild data.querySelector ".votd-box p"
 			#@votdc.appendChild data.querySelector ".votd-box a:first-child"
@@ -52,4 +52,4 @@ class RealFoodView
 		if @panel.isVisible()
 			@panel.hide()
 		else
-			@panel.show()	
+			@panel.show()
