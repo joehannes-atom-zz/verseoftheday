@@ -1,7 +1,7 @@
 {
   "name": "verse-of-the-day",
   "main": "./lib/verseoftheday",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A VOTD for the atomic geek",
   "author": "Johannes Neugschwentner",
   "keywords": [
