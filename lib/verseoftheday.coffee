@@ -7,8 +7,8 @@ module.exports =
   statusIcon: null
 
   activate: ->
-	@view = new RealFoodView();
-    @subscriptions = new CompositeDisposable();
+    @view = new RealFoodView()
+    @subscriptions = new CompositeDisposable()
     @subscriptions.add atom.commands.add 'atom-workspace', 'votd:toggle': => @toggle()
 
   deactivate: ->
@@ -21,5 +21,5 @@ module.exports =
     @statusIcon = statusBar.addRightTile
 	  item: @view.getElement()
 	  priority: -2
-	
+
   toggle: -> @view.toggle()
