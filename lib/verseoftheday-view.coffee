@@ -42,7 +42,7 @@ class RealFoodView
 		@panel.destroy()
 
 	getLyrics: =>
-		fetch("http://www.biblegateway.com").then (data) =>
+		fetch("http://www.biblegateway.com").then((r) => r.blob()).then (data) =>
 			console.log(data);
 			#@votdc.appendchild data.querySelector ".votd-box p"
 			#@votdc.appendChild data.querySelector ".votd-box a:first-child"
