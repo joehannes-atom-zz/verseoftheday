@@ -2,6 +2,7 @@ module.exports =
 	statusIcon: null
 
   activate: ->
+	"foo"
 
   deactivate: ->
     @statusIconTile?.destroy()

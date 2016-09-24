@@ -15,6 +15,7 @@ class StatusIcon extends View
       'votd:toggle': => @toggle()
 
     @attach()
+	@view = new VerseOfTheDayView()
 
   attach: ->
     @tile = @statusIconProvider.addRightTile(item: this, priority: -2)
@@ -24,4 +25,4 @@ class StatusIcon extends View
 	@subscriptions.dispose()
 
   toggle: ->
-	VerseOfTheDayView.toggle()
+	@view.toggle()
