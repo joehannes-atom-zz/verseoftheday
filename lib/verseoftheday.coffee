@@ -1,4 +1,4 @@
-{ RealFodView } = require "./verseoftheday-view"
+{ RealFoodView } = require "./verseoftheday-view"
 
 module.exports =
 	statusIcon: null
