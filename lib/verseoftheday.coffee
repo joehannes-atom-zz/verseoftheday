@@ -1,25 +1,25 @@
 { RealFodView } = require "./verseoftheday-view"
 
 module.exports =
-  statusIcon: null
-  view: null
-  subscriptions: null
-  statusIcon: null
+	statusIcon: null
+	view: null
+	subscriptions: null
+	statusIcon: null
 
-  activate: ->
-    @view = new RealFoodView()
-    @subscriptions = new CompositeDisposable()
-    @subscriptions.add atom.commands.add 'atom-workspace', 'votd:toggle': => @toggle()
+	activate: ->
+		@view = new RealFoodView()
+		@subscriptions = new CompositeDisposable()
+		@subscriptions.add atom.commands.add 'atom-workspace', 'votd:toggle': => @toggle()
 
-  deactivate: ->
-    @statusIcon?.destroy()
-    @statusIcon = null
+	deactivate: ->
+		@statusIcon?.destroy()
+		@statusIcon = null
 
-  serialize: -> {}
+	serialize: -> {}
 
-  consumeStatusBar: (statusBar) ->
-    @statusIcon = statusBar.addRightTile
-      item: @view.getElement()
-      priority: -2
+	consumeStatusBar: (statusBar) ->
+		@statusIcon = statusBar.addRightTile
+		  item: @view.getElement()
+		  priority: -2
 
-  toggle: -> @view.toggle()
+	toggle: -> @view.toggle()
