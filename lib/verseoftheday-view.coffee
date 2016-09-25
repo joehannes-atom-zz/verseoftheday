@@ -28,8 +28,6 @@ class RealFoodView
 		@attach()
 		@getLyrics()
 
-		@subscriptions.add atom.tooltips.add @element, title: @signature
-
 	attach: ->
 		return if @panel?
 		@panel = atom.workspace.addBottomPanel { item: @votdc, visible: false }
@@ -50,6 +48,7 @@ class RealFoodView
 				@signature = t.querySelector(".votd-box a:first-child").textContent
 				@votdc.appendChild t.querySelector ".votd-box p"
 				@votdc.appendChild t.querySelector ".votd-box a:first-child"
+				@subscriptions.add atom.tooltips.add @element, title: @signature
 			file.readAsText data
 	toggle: ->
 		if @panel.isVisible()
