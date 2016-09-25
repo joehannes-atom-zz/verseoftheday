@@ -43,11 +43,14 @@ class RealFoodView
 
 	getLyrics: =>
 		fetch("http://www.biblegateway.com").then((r) => r.blob()).then (data) =>
-			console.log(data);
-			#@votdc.appendchild data.querySelector ".votd-box p"
-			#@votdc.appendChild data.querySelector ".votd-box a:first-child"
-			@signature = data.querySelector(".votd-box a:first-child").textContent
-
+			file = new FileReader()
+			t = document.createElement("div");
+			file.onload = () =>
+				t.innerHTML = file.result
+				@signature = t.querySelector(".votd-box a:first-child").textContent
+				@votdc.appendChild t.querySelector ".votd-box p"
+				@votdc.appendChild t.querySelector ".votd-box a:first-child"
+			file.readAsText data
 	toggle: ->
 		if @panel.isVisible()
 			@panel.hide()
